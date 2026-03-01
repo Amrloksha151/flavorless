@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spending Tracker</title>
+</head>
+<body>
+    <center><h1>Spending Tracker</h1>
+    <p><em>Manage and Track income and outcome.</em></p>
+    </center><hr>
+    <h2>Overview</h2>
+    <div>
+        <details>
+            <summary><strong><font size="+2">Income</font></strong></summary>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Source</th>
+                        <th>Amount</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+            </table>
+            <button><a href="income.html">Add Income</a></button>
+        </details>
+        <br>
+        <details>
+            <summary><strong><font size="+2">Expenses</font></strong></summary>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Expense</th>
+                        <th>Amount</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+            </table>
+            <button><a href="expense.html">Add Expense</a></button>
+        </details>
+    </div>
+    <h1>Balance: </h1>
+    <mark><pre id="balance"></pre></mark>
+    <script type="module" src="js/main.js" defer></script>
+</body>
+</html>
