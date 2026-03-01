@@ -1,9 +1,4 @@
-let INCOMES;
-try {
-    INCOMES = JSON.parse(localStorage.getItem("INCOMES"));
-} catch (error) {
-    INCOMES = [];
-}
+let INCOMES = JSON.parse(localStorage.getItem("INCOMES")) || [];
 class Income {
     constructor (source, amount) {
         this.source = source;

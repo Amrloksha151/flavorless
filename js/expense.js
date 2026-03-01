@@ -1,9 +1,4 @@
-let EXPENSES;
-try {
-    EXPENSES = JSON.parse(localStorage.getItem("EXPENSES")) || [];
-} catch (error) {
-    EXPENSES = [];
-}
+let EXPENSES = JSON.parse(localStorage.getItem("EXPENSES")) || [];
 class Expense {
     constructor (expense, amount) {
         this.expense = expense;

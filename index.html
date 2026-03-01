@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="money.png" type="image/png">
     <title>Spending Tracker</title>
 </head>
 <body>
-    <center><h1>Spending Tracker</h1>
+    <center>
+    <img src="money.png" alt="Logo" width="200px" height="200px">
+    <h1>Spending Tracker</h1>
     <p><em>Manage and Track income and outcome.</em></p>
     </center><hr>
     <h2>Overview</h2>
@@ -24,7 +27,7 @@
                 </thead>
                 <tbody id="incomes"></tbody>
             </table>
-            <button><a href="income.html">Add Income</a></button>
+            <button><a href="/income">Add Income</a></button>
         </details>
         <br>
         <details>
@@ -40,11 +43,11 @@
                 </thead>
                 <tbody id="expenses"></tbody>
             </table>
-            <button><a href="expense.html">Add Expense</a></button>
+            <button><a href="/expense">Add Expense</a></button>
         </details>
     </div>
     <h1>Balance: </h1>
-    <mark><pre id="balance"></pre></mark>
-    <script type="module" src="js/main.js" defer></script>
+    <font size="+3"><strong><pre id="balance"></pre></strong></font>
+    <script type="module" src="/js/main.js" defer></script>
 </body>
 </html>
