@@ -7,16 +7,14 @@ class Expense {
         EXPENSES.push(this);
         localStorage.setItem("EXPENSES", JSON.stringify(EXPENSES));
     }
-
-    remove () {
-        EXPENSES = EXPENSES.filter( i => i.id !== this.id);
-        localStorage.setItem("EXPENSES", JSON.stringify(EXPENSES));
-    }
 }
 
-function addExpense() {
-    new Expense(document.getElementById("expense").value, Number(document.getElementById("amount").value));
-    document.getElementsByTagName('form').reset()
-}
-
-export {Expense, EXPENSES, addExpense};
+(() => {
+    const FORM = document.getElementsByTagName('form')[0];
+    FORM.addEventListener('submit', event => {
+        event.preventDefault();
+        new Expense(document.getElementById("expense").value, Number(document.getElementById("amount").value));
+        FORM.reset();
+    });
+})();
+export {Expense, EXPENSES};

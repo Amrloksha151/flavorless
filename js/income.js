@@ -7,16 +7,14 @@ class Income {
         INCOMES.push(this);
         localStorage.setItem("INCOMES", JSON.stringify(INCOMES));
     }
-
-    remove () {
-        INCOMES = INCOMES.filter( i => i.id !== this.id);
-        localStorage.setItem("INCOMES", JSON.stringify(INCOMES));
-    }
 }
 
-function addIncome() {
-    new Income(document.getElementById("source").value, Number(document.getElementById("amount").value));
-    document.getElementsByTagName('form').reset()
-}
-
-export {Income, addIncome, INCOMES};
+(() => {
+    const FORM = document.getElementsByTagName('form')[0];
+    FORM.addEventListener('submit', event => {
+        event.preventDefault();
+        new Income(document.getElementById("source").value, Number(document.getElementById("amount").value));
+        FORM.reset();
+    });
+})();
+export {Income, INCOMES};
