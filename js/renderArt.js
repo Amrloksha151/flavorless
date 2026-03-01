@@ -81,10 +81,11 @@ const NUMBERS = [
 export default function renderNumber(Input, elementId) {
     let rows = ['', '', '', '', '']
     try {
-        let num = String.toString(Input)
+        let num = String(Input)
     }
-    catch {
-        alert('Input must be an integer number.')
+    catch (error) {
+        alert('Input must be an integer number.');
+        return 0;
     }
     for (let i = num.length; i > 0; i--) {
         let CN = NUMBERS[Number(num[i])];

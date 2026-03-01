@@ -1,4 +1,9 @@
-const INCOMES = [];
+let INCOMES;
+try {
+    INCOMES = JSON.parse(localStorage.getItem("INCOMES"));
+} catch (error) {
+    INCOMES = [];
+}
 class Income {
     constructor (source, amount) {
         this.source = source;
@@ -9,12 +14,12 @@ class Income {
     }
 }
 
-(() => {
+document.addEventListener('DOMContentLoaded', (event) => {
     const FORM = document.getElementsByTagName('form')[0];
     FORM.addEventListener('submit', event => {
         event.preventDefault();
         new Income(document.getElementById("source").value, Number(document.getElementById("amount").value));
         FORM.reset();
     });
-})();
+});
 export {Income, INCOMES};

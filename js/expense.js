@@ -1,4 +1,9 @@
-const EXPENSES = [];
+let EXPENSES;
+try {
+    EXPENSES = JSON.parse(localStorage.getItem("EXPENSES")) || [];
+} catch (error) {
+    EXPENSES = [];
+}
 class Expense {
     constructor (expense, amount) {
         this.expense = expense;
@@ -9,12 +14,12 @@ class Expense {
     }
 }
 
-(() => {
+document.addEventListener('DOMContentLoaded', (event) => {
     const FORM = document.getElementsByTagName('form')[0];
     FORM.addEventListener('submit', event => {
         event.preventDefault();
         new Expense(document.getElementById("expense").value, Number(document.getElementById("amount").value));
         FORM.reset();
     });
-})();
+});
 export {Expense, EXPENSES};
